@@ -1,4 +1,4 @@
-# Stitching a binary file
+# Downloading and generating a binary file
 
 
 
