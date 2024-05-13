@@ -1,0 +1,11 @@
+{
+    "host":"wss://gaodi.dannie.app" ,
+    "mount":"/api",
+    "token": "41e65d59-1ef5-42b8-9afc-ad875c9496cb",
+
+    "server_token": "41e65d59-1ef5-42b8-9afc-ad875c9496cb",
+    "local_token": "cd42aaea-49f9-44e5-bcee-5f32da64502b",
+
+    "path":"./bin/etalon.bin"
+}
+
