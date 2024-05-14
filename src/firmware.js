@@ -49,17 +49,16 @@ export async function write() {
                 resolve(true)
             }
             console.log(`stdout: ${stdout}`);
-            console.log(stdout, 'ЭТО ОШИБКА')
             if (stdout === 'send_recv send request failed: LIBUSB_ERROR_NO_DEVICE') {
                 reject('LIBUSB_ERROR_NO_DEVICE')
             }
-            // if (stdout.split(" ").length > 2 && stdout.split(" ")[9] === '==') {
-            //     console.log('RETURN WRITE processing')
-            //     resetUsb()
-            //     erase()
-            //     write()
-            //     reject(false)
-            // }
+            if (stdout.split(" ").length > 2 && stdout.split(" ")[9] === '==') {
+                console.log('RETURN WRITE processing')
+                resetUsb()
+                erase()
+                write()
+                reject(false)
+            }
             resolve(true)
         });
     })
