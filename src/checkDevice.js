@@ -25,4 +25,4 @@ export async function read() {
         "DATA": {}
     })
 }
-// await read().then(response => console.log(response))
+await read().then(response => console.log(response))
