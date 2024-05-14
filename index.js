@@ -90,13 +90,13 @@ agent.run(async (data) => {
                 await startDhcp()
 
                 await ping()
-                // .then(response => {
-                //     console.log(response.split(" ").length)
-                //     console.log(response.length)
-                //     if(response.split(" ").length === 38) {
-                //         message = {success: "Ошибка", message: "Неудачное обращение к кассе"}
-                //     }
-                // })
+                .then(response => {
+                    console.log(response.split(" ").length)
+                    console.log(response.length)
+                    if(response.split(" ").length === 38) {
+                        message = {success: "Ошибка", message: "Неудачное обращение к кассе"}
+                    }
+                })
                 await read()
                     .then(response => {
                         const isReadResult = response.data.RESULT === 'OK'
@@ -138,5 +138,5 @@ agent.run(async (data) => {
         console.log('ОШИБКА', e)
         throw {error: "print", message: "Printer is unavailable"}
     }
-    // return {success: "EFIR", message: "Прошивка кассы стёрта"}
+    return {success: "EFIR", message: "Прошивка кассы стёрта"}
 })
